@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteUp - Agence d'avis Google</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #003366; /* Bleu marine */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #002244; /* Bleu encore plus foncé */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative; /* Position relative */
+            width: 100%;
+            margin-top: 40px; /* Espacement au-dessus du pied de page */
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="logo">NoteUp</h1>
+    <p class="tagline">Agence d'avis Google</p>
+</header>
+
+<style>
+    /* Style global pour le header */
+    .site-header {
+        background-color: #003366; /* Bleu marine */
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Effet visuel avec une image d'arrière-plan subtile */
+    .site-header::before {
+        content: "";
+        background-image: url('arriereplan.jpg'); /* Remplacer par le bon chemin d'image */
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* Logo NoteUp avec police stylisée et en italique */
+    .logo {
+        font-family: 'Georgia', serif; /* Remplace par une police différente si tu souhaites */
+        font-size: 56px;
+        font-style: italic;
+        font-weight: bold;
+        z-index: 1;
+        position: relative;
+        margin: 0;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre pour un meilleur contraste */
+    }
+
+    /* Tagline */
+    .tagline {
+        font-family: 'Arial', sans-serif;
+        font-size: 20px;
+        margin: 10px 0 0;
+        z-index: 1;
+        position: relative;
+        color: #e6f2ff; /* Un bleu clair pour contraster avec le fond */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Ajout d'ombre douce */
+    }
+
+    /* Ajout de flexibilité pour les petits écrans */
+    @media (max-width: 768px) {
+        .logo {
+            font-size: 40px;
+        }
+        .tagline {
+            font-size: 18px;
+        }
+    }
+</style>
+
+<section id="presentation-entreprise">
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <div class="about-container">
+        <div class="about-content">
+            <p>
+                Nous sommes deux étudiants entrepreneurs passionnés par l'accompagnement des commerçants dans l'optimisation et l'amélioration de leur présence en ligne sur Google My Business.
+            </p>
+            <p>
+                Grâce à des stratégies éprouvées, nous augmentons le nombre d'avis clients, en particulier les avis 5 étoiles, pour renforcer durablement leur réputation et garantir une visibilité accrue.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-title {
+        color: #003366;
+        text-align: center;
+        font-size: 32px; /* Augmentation de la taille pour plus de visibilité */
+        margin-bottom: 20px;
+        text-transform: uppercase; /* Mettre le texte en majuscules */
+        letter-spacing: 1px; /* Espacement des lettres pour un style plus élégant */
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrer le contenu dans le conteneur */
+        background-color: #f9f9f9;
+        padding: 40px; /* Augmenter le rembourrage pour plus d'espace */
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .about-content {
+        text-align: center; /* Centrer le texte dans le contenu */
+        line-height: 1.8; /* Espacement des lignes */
+        font-size: 18px;
+        color: #333;
+        padding: 0 15px; /* Espacement latéral pour éviter le bord */
+    }
+
+    .about-content p {
+        margin-bottom: 15px; /* Espacement entre les paragraphes */
+        transition: color 0.3s; /* Transition douce pour le changement de couleur */
+    }
+
+    .about-content p:hover {
+        color: #003366; /* Changer la couleur au survol pour un effet interactif */
+    }
+
+    @media (min-width: 768px) {
+        .about-container {
+            flex-direction: column; /* Maintenir une colonne sur mobile */
+        }
+    }
+</style>
+
+<section id="comment-nous-agissons" class="how-we-work">
+    <h2 class="section-title">À quoi sert-on ?</h2>
+    <div class="how-we-work-container">
+        <p>Nous opérons sur trois points cruciaux pour professionnaliser l'image en ligne de votre commerce et attirer plus de clients :</p>
+        <ul class="methods-list">
+            <li><strong>I → Présence en ligne :</strong> Création et optimisation des comptes de réseaux sociaux pour améliorer la visibilité de votre commerce.</li>
+            <li><strong>II → Compte Google My Business :</strong> Optimisation du compte Google My Business pour attirer un maximum de clients.</li>
+            <li><strong>III → Sollicitation d'avis :</strong> Nous vous aidons à solliciter un maximum d’avis clients grâce à des méthodes efficaces et éprouvées.</li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    .how-we-work {
+        background-color: #f0faff; /* Couleur de fond douce */
+        padding: 60px 40px; /* Rembourrage pour l'espace */
+        border-radius: 12px;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+        max-width: 1200px;
+        margin: 40px auto; /* Centrer la section */
+        transition: transform 0.3s; /* Transition douce */
+    }
+
+    .how-we-work:hover {
+        transform: scale(1.02); /* Légère animation au survol */
+    }
+
+    .how-we-work-container {
+        text-align: center; /* Centrer tout le texte */
+        max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité */
+        line-height: 1.6; /* Espacement des lignes pour le confort de lecture */
+        margin: 0 auto; /* Centrer le conteneur */
+    }
+
+    .methods-list {
+        list-style-type: none; /* Supprimer les puces */
+        padding: 0;
+        margin: 20px 0; /* Marges autour de la liste */
+    }
+
+    .methods-list li {
+        background-color: #e6f2ff; /* Couleur de fond des items de la liste */
+        margin-bottom: 20px; /* Espacement accru entre les éléments de la liste */
+        padding: 20px; /* Rembourrage interne */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
+        max-width: 600px; /* Largeur maximale pour un meilleur rendu */
+        margin-left: auto; /* Centrer horizontalement */
+        margin-right: auto; /* Centrer horizontalement */
+        font-size: 18px; /* Taille de la police pour une meilleure lisibilité */
+        text-align: left; /* Alignement à gauche pour le texte */
+    }
+
+    .methods-list li:hover {
+        background-color: #d0e4ff; /* Changement de couleur au survol */
+        transform: translateY(-2px); /* Légère élévation au survol */
+    }
+
+    .methods-list li strong {
+        color: #003366; /* Couleur des textes forts */
+        font-size: 20px; /* Taille de la police pour les éléments importants */
+    }
+</style>
+
+<section id="presentation-process" class="process-section">
+    <h2 class="section-title">Comment ça marche ?</h2>
+    <div class="process-container">
+        <div class="process-content">
+            <p>Nous avons mis en place un processus simple, efficace et transparent pour chaque commerçant :</p>
+            <ol class="process-steps">
+                <li>
+                    <strong>I → État des lieux :</strong> Nous analysons <strong>gratuitement</strong> la situation actuelle de votre commerce en termes de sollicitation d'avis et de réputation en ligne.
+                </li>
+                <li>
+                    <strong>II → Bilan :</strong> Nous vous faisons un récapitulatif <strong>gratuit</strong> de l'état des lieux pour identifier avec vous les points à améliorer et établir un plan d'action.
+                </li>
+                <li>
+                    <strong>III → Devis :</strong> Nous proposons deux formules adaptées pour la mise en place du plan d'action :
+                    <ul class="pricing-options">
+                        <li><strong>Option 1 :</strong> Un paiement unique pour l'ensemble du service.</li>
+                        <li><strong>Option 2 :</strong> Un paiement basé sur les résultats.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<style>
+    .process-section {
+        background-color: #f9f9f9;
+        padding: 40px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: 40px auto;
+        transition: transform 0.3s; /* Ajout d'une transition */
+    }
+
+    .process-section:hover {
+        transform: scale(1.02); /* Légère animation au survol */
+    }
+
+    .section-title {
+        text-align: center;
+        color: #003366;
+        font-size: 32px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px; /* Espacement des lettres */
+    }
+
+    .process-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Centrer tout le texte */
+    }
+
+    .process-content {
+        max-width: 800px;
+        line-height: 1.8; /* Espacement des lignes */
+    }
+
+    .process-steps {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .process-steps li {
+        background-color: #fff;
+        padding: 15px;
+        border-left: 4px solid #003366;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s; /* Transition pour l'effet au survol */
+    }
+
+    .process-steps li:hover {
+        background-color: #e6f2ff; /* Changement de couleur au survol */
+    }
+
+    .pricing-options {
+        list-style: none;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .pricing-options li {
+        background-color: #e6f2ff;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+
+    .pricing-options li strong {
+        color: #003366;
+    }
+
+    @media (min-width: 768px) {
+        .process-container {
+            flex-direction: column; /* Maintenir une colonne sur mobile */
+        }
+    }
+</style>
+
+<section id="Pourquoi-nous-choisir" class="why-choose-us">
+    <h2 class="section-title">Pourquoi nous choisir</h2>
+    <div class="why-choose-container">
+        <div class="why-choose-content">
+            <p>Nos clients nous choisissent pour plusieurs raisons :</p>
+            <div class="choose-boxes">
+                <div class="choose-box">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>État des lieux :</strong>
+                    <p>Nous offrons un état des lieux <strong>gratuit</strong> de votre commerce qui ne vous engage en rien.</p>
+                </div>
+                <div class="choose-box">
+                    <i class="fas fa-chart-line"></i>
+                    <strong>Résultats :</strong>
+                    <p>Notre processus <strong>garantit</strong> des résultats dès le premier mois de sa mise en place.</p>
+                </div>
+                <div class="choose-box">
+                    <i class="fas fa-handshake"></i>
+                    <strong>Flexibilité :</strong>
+                    <p>Des options de paiement flexibles, <strong>adaptées</strong> aux besoins de nos clients.</p>
+                </div>
+            </div>
+            <p>Résultats obtenus :</p>
+            <div class="results-boxes">
+                <div class="results-box">
+                    <i class="fas fa-star"></i>
+                    <strong>Plus d'avis 5 étoiles :</strong>
+                    <p>En moyenne, le commerce que nous avons accompagné avait plus de 60 avis clients 5 étoiles par mois.</p>
+                </div>
+                <div class="results-box">
+                    <i class="fas fa-users"></i>
+                    <strong>Améliorations significatives :</strong>
+                    <p>Le commerce est devenu plus crédible sur son marché et attire plus de clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .why-choose-us {
+        background-color: #f9f9f9;
+        padding: 40px 20px; /* Rembourrage pour une section plus compacte */
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        max-width: 900px; /* Réduction de la largeur maximale */
+        margin: 20px auto; /* Centrer la section */
+        transition: transform 0.3s; /* Ajout d'une transition */
+    }
+
+    .why-choose-us:hover {
+        transform: scale(1.02); /* Légère animation au survol */
+    }
+
+    .section-title {
+        text-align: center;
+        color: #003366;
+        font-size: 30px; /* Ajustement de la taille du titre */
+        margin-bottom: 20px; /* Espacement réduit */
+        text-transform: uppercase;
+        letter-spacing: 1px; /* Espacement des lettres */
+        border-bottom: 2px solid #003366; /* Ligne en bas du titre pour un effet décoratif */
+        padding-bottom: 10px; /* Espacement sous le titre */
+    }
+
+    .why-choose-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Centrer tout le texte */
+    }
+
+    .why-choose-content {
+        max-width: 800px;
+        line-height: 1.6; /* Espacement des lignes ajusté pour une meilleure lisibilité */
+    }
+
+    .choose-boxes {
+        display: flex; /* Affichage en ligne des boîtes */
+        justify-content: space-between; /* Espacement égal entre les boîtes */
+        gap: 20px; /* Espacement entre les boîtes */
+        flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+        max-width: 100%; /* Élargir les boîtes pour remplir l'espace */
+    }
+
+    .choose-box {
+        background-color: #e6f2ff;
+        padding: 15px; /* Réduction du rembourrage interne */
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
+        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
+        width: calc(30% - 20px); /* Largeur de 30% moins l'espacement */
+        min-width: 220px; /* Largeur minimale pour s'adapter aux petits écrans */
+        text-align: left; /* Alignement à gauche pour le texte */
+    }
+
+    .choose-box:hover {
+        background-color: #d0e4ff; /* Changement de couleur au survol */
+        transform: translateY(-2px); /* Légère élévation au survol */
+    }
+
+    .choose-box strong {
+        color: #003366; /* Couleur des textes forts */
+    }
+
+    .choose-box i {
+        font-size: 20px; /* Taille des icônes */
+        color: #003366; /* Couleur des icônes */
+        margin-right: 10px; /* Espacement entre l'icône et le texte */
+    }
+
+    .results-boxes {
+        display: flex;
+        flex-direction: row; /* Alignement horizontal pour les résultats */
+        justify-content: space-between; /* Espacement égal entre les boîtes */
+        gap: 20px; /* Espacement entre les boîtes */
+        max-width: 100%; /* Élargir les boîtes pour remplir l'espace */
+    }
+
+    .results-box {
+        background-color: #e6f2ff; /* Couleur de fond des résultats */
+        padding: 15px; /* Rembourrage interne */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
+        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
+        width: calc(48%); /* Largeur pour s'assurer qu'elles soient côte à côte */
+        min-width: 220px; /* Largeur minimale pour s'adapter aux petits écrans */
+        text-align: left; /* Alignement à gauche pour le texte */
+    }
+
+    .results-box:hover {
+        background-color: #d0e4ff; /* Changement de couleur au survol */
+        transform: translateY(-2px); /* Légère élévation au survol */
+    }
+
+    .results-box strong {
+        color: #003366; /* Couleur des textes forts */
+    }
+
+    .results-box i {
+        font-size: 20px; /* Taille des icônes */
+        color: #003366; /* Couleur des icônes */
+        margin-right: 10px; /* Espacement entre l'icône et le texte */
+    }
+
+    @media (max-width: 768px) {
+        .choose-boxes, .results-boxes {
+            flex-direction: column; /* Retour en colonne sur les petits écrans */
+            align-items: center; /* Centrer les éléments sur les petits écrans */
+        }
+
+        .choose-box, .results-box {
+            width: 100%; /* Pleine largeur sur petits écrans */
+        }
+    }
+</style>
+
+<section id="contact" class="contact-section">
+    <h2 class="contact-title">Prêt à rejoindre l'aventure ?</h2>
+    <p class="contact-subtitle">Nous contacter :</p>
+    <div class="contact-info">
+        <p><strong>Téléphone :</strong> +33 7 80 04 00 77</p>
+        <p><strong>Email :</strong> contact.noteup@gmail.com</p>
+    </div>
+</section>
+
+<style>
+    .contact-section {
+        background-color: #003366; /* Couleur de fond bleu marine */
+        color: white; /* Couleur du texte en blanc */
+        padding: 40px 20px; /* Rembourrage pour l'espace */
+        text-align: center; /* Centre le texte */
+        border-radius: 10px; /* Coins arrondis */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        margin: 40px auto; /* Espacement autour de la section */
+        max-width: 800px; /* Limite la largeur de la section */
+    }
+
+    .contact-title {
+        font-size: 32px; /* Augmentation de la taille du titre pour plus de visibilité */
+        margin-bottom: 10px; /* Espacement en dessous du titre */
+        text-transform: uppercase; /* Texte en majuscules */
+        font-weight: bold; /* Gras pour un meilleur contraste */
+        letter-spacing: 1px; /* Espacement des lettres pour une meilleure lisibilité */
+        color: white; /* Couleur du titre en blanc */
+    }
+
+    .contact-subtitle {
+        font-size: 20px; /* Taille de la police pour le sous-titre */
+        margin-bottom: 20px; /* Espacement en dessous du sous-titre */
+    }
+
+    .contact-info p {
+        margin: 5px 0; /* Espacement autour des coordonnées */
+        font-size: 18px; /* Taille de la police pour les coordonnées */
+    }
+</style>
+
+<footer>
+    <p>© 2024 NoteUp - Tous droits réservés</p>
+</footer>
+
+<style>
+    footer {
+        background-color: #003366; /* Couleur de fond bleu marine */
+        color: white; /* Couleur du texte en blanc */
+        text-align: center; /* Centre le texte */
+        padding: 15px 0; /* Rembourrage pour l'espacement */
+        position: relative; /* Position relative */
+        width: 100%; /* Prend toute la largeur */
+        margin-top: 40px; /* Espacement au-dessus du pied de page */
+        font-size: 14px; /* Taille de la police */
+    }
+</style>
+
+</body>
+</html>
