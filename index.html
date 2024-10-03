@@ -17,6 +17,27 @@
             padding: 20px;
             text-align: center;
         }
+        nav {
+            background-color: #002244; /* Couleur de fond de la barre de navigation */
+            padding: 15px; /* Espacement de la barre de navigation */
+            position: sticky; /* Fixe la barre en haut lors du défilement */
+            top: 0; /* Reste en haut */
+            z-index: 1000; /* Assure que la barre de navigation reste au-dessus du contenu */
+            text-align: center; /* Centre le contenu de la barre de navigation */
+        }
+        nav a {
+            color: white; /* Couleur des liens */
+            margin: 0 15px; /* Espacement entre les liens */
+            text-decoration: none; /* Supprime le soulignement */
+            font-weight: bold; /* Texte en gras */
+            padding: 10px 20px; /* Espacement interne pour ressembler à des boutons */
+            border-radius: 5px; /* Coins arrondis pour un effet de bouton */
+            transition: background-color 0.3s, transform 0.3s; /* Transition douce */
+        }
+        nav a:hover {
+            background-color: #004080; /* Changement de couleur au survol */
+            transform: scale(1.05); /* Légère animation d'agrandissement au survol */
+        }
         section {
             padding: 20px;
             margin: 20px;
@@ -110,6 +131,14 @@
         }
     }
 </style>
+
+<nav>
+    <a href="#presentation-entreprise">Qui sommes-nous ?</a>
+    <a href="#comment-nous-agissons">À quoi sert-on ?</a>
+    <a href="#presentation-process">Comment ça marche ?</a>
+    <a href="#Pourquoi-nous-choisir">Pourquoi nous choisir</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 <section id="presentation-entreprise">
     <h2 class="section-title">Qui sommes-nous ?</h2>
