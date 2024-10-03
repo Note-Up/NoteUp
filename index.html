@@ -61,6 +61,19 @@
             position: relative; /* Position relative */
             width: 100%;
             margin-top: 40px; /* Espacement au-dessus du pied de page */
+            }
+            /* Styles pour les écrans plus petits */
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column; /* Change la direction en colonne sur mobile */
+                align-items: center; /* Centre les liens */
+            }
+            nav a {
+                margin: 10px 0; /* Ajuste les marges pour le mobile */
+                width: 90%; /* Prend 90% de la largeur pour mieux s'adapter */
+                text-align: center; /* Centre le texte pour mobile */
+            }
         }
     </style>
 </head>
