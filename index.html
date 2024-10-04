@@ -4,148 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteUp - Agence d'avis Google</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, h1, h2, p {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+        }
+        body {
             background-color: #f0f0f0;
         }
-        header {
-            background-color: #003366; /* Bleu marine */
+        header, footer {
+            background-color: #8DAB94;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
+        }
+        header {
+            position: relative;
+            background-image: url('test.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+        }
+        .logo {
+            font-size: 56px;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .tagline {
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        #menu-toggle {
+            background-color: #7A9B83;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
         nav {
-            background-color: #002244; /* Couleur de fond de la barre de navigation */
-            padding: 15px; /* Espacement de la barre de navigation */
-            position: sticky; /* Fixe la barre en haut lors du défilement */
-            top: 0; /* Reste en haut */
-            z-index: 1000; /* Assure que la barre de navigation reste au-dessus du contenu */
-            text-align: center; /* Centre le contenu de la barre de navigation */
+            display: none;
+            flex-direction: column;
+            background-color: #7A9B83;
+            text-align: center;
+            padding: 15px;
+        }
+        nav.active {
+            display: flex;
         }
         nav a {
-            color: white; /* Couleur des liens */
-            margin: 0 15px; /* Espacement entre les liens */
-            text-decoration: none; /* Supprime le soulignement */
-            font-weight: bold; /* Texte en gras */
-            padding: 10px 20px; /* Espacement interne pour ressembler à des boutons */
-            border-radius: 5px; /* Coins arrondis pour un effet de bouton */
-            transition: background-color 0.3s, transform 0.3s; /* Transition douce */
+            color: white;
+            margin: 10px 0;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s, transform 0.3s;
         }
         nav a:hover {
-            background-color: #004080; /* Changement de couleur au survol */
-            transform: scale(1.05); /* Légère animation d'agrandissement au survol */
+            background-color: #6B8B77;
+            transform: scale(1.05);
         }
         section {
-            padding: 20px;
-            margin: 20px;
+            padding: 40px 20px;
             background-color: white;
+            margin: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
         }
         h2 {
-            color: #003366;
+            color: #8DAB94;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
+        .about-content, .process-content, .why-choose-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .methods-list, .pricing-options {
+            list-style: none;
+            padding: 0;
+        }
+        .methods-list li, .process-steps li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #e6f2ff;
             border-radius: 8px;
+            transition: background-color 0.3s;
         }
-        footer {
-            background-color: #002244; /* Bleu encore plus foncé */
+        .methods-list li:hover, .process-steps li:hover {
+            background-color: #d0e4ff;
+        }
+        .methods-list li::before, .process-steps li::before {
+            content: "\f058";
+            font-family: 'FontAwesome';
+            color: #8DAB94;
+            margin-right: 10px;
+        }
+        .contact-section {
+            background-color: #7A9B83;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: relative; /* Position relative */
-            width: 100%;
-            margin-top: 40px; /* Espacement au-dessus du pied de page */
-            }
-            /* Styles pour les écrans plus petits */
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+	.contact-section h2 {
+            color: white; /* Le titre de la section contact en blanc */
+ 	}
+        .btn {
+            display: inline-block;
+            background-color: #8DAB94;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #6B8B77;
+            transform: scale(1.05);
+        }
+        footer {
+            font-size: 14px;
+            padding: 15px 0;
+        }
+
         @media (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column; /* Change la direction en colonne sur mobile */
-                align-items: center; /* Centre les liens */
+            .logo {
+                font-size: 40px;
             }
-            nav a {
-                margin: 3px 0; /* Ajuste les marges pour le mobile */
-                width: 90%; /* Prend 90% de la largeur pour mieux s'adapter */
-                text-align: center; /* Centre le texte pour mobile */
+            .tagline {
+                font-size: 18px;
+            }
+            nav {
+                top: 60px;
             }
         }
     </style>
 </head>
 <body>
 
-<header class="site-header">
+<header>
     <h1 class="logo">NoteUp</h1>
     <p class="tagline">Agence d'avis Google</p>
+    <button id="menu-toggle">☰</button>
 </header>
 
-<style>
-    /* Style global pour le header */
-    .site-header {
-        background-color: #003366; /* Bleu marine */
-        color: white;
-        padding: 50px 20px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Effet visuel avec une image d'arrière-plan subtile */
-    .site-header::before {
-        content: "";
-        background-image: url('arriereplan.jpg'); /* Remplacer par le bon chemin d'image */
-        background-size: cover;
-        background-position: center;
-        opacity: 0.3;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-    }
-
-    /* Logo NoteUp avec police stylisée et en italique */
-    .logo {
-        font-family: 'Georgia', serif; /* Remplace par une police différente si tu souhaites */
-        font-size: 56px;
-        font-style: italic;
-        font-weight: bold;
-        z-index: 1;
-        position: relative;
-        margin: 0;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre pour un meilleur contraste */
-    }
-
-    /* Tagline */
-    .tagline {
-        font-family: 'Arial', sans-serif;
-        font-size: 20px;
-        margin: 10px 0 0;
-        z-index: 1;
-        position: relative;
-        color: #e6f2ff; /* Un bleu clair pour contraster avec le fond */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Ajout d'ombre douce */
-    }
-
-    /* Ajout de flexibilité pour les petits écrans */
-    @media (max-width: 768px) {
-        .logo {
-            font-size: 40px;
-        }
-        .tagline {
-            font-size: 18px;
-        }
-    }
-</style>
-
-<nav>
+<nav id="navbar">
     <a href="#presentation-entreprise">Qui sommes-nous ?</a>
     <a href="#comment-nous-agissons">À quoi sert-on ?</a>
     <a href="#presentation-process">Comment ça marche ?</a>
@@ -154,448 +174,191 @@
 </nav>
 
 <section id="presentation-entreprise">
-    <h2 class="section-title">Qui sommes-nous ?</h2>
-    <div class="about-container">
-        <div class="about-content">
-            <p>
-                Nous sommes deux étudiants entrepreneurs passionnés par l'accompagnement des commerçants dans l'optimisation et l'amélioration de leur présence en ligne sur Google My Business.
-            </p>
-            <p>
-                Grâce à des stratégies éprouvées, nous augmentons le nombre d'avis clients, en particulier les avis 5 étoiles, pour renforcer durablement leur réputation et garantir une visibilité accrue.
-            </p>
-        </div>
+    <h2>Qui sommes-nous ?</h2>
+    <div class="about-content">
+        <p>Nous sommes deux étudiants entrepreneurs passionnés par l'accompagnement des commerçants dans l'optimisation et l'amélioration de leur présence en ligne sur Google My Business.</p>
+        <p>Grâce à des stratégies éprouvées, nous augmentons le nombre d'avis clients, en particulier les avis 5 étoiles, pour renforcer durablement leur réputation.</p>
     </div>
 </section>
 
-<style>
-    .section-title {
-        color: #003366;
-        text-align: center;
-        font-size: 32px; /* Augmentation de la taille pour plus de visibilité */
-        margin-bottom: 20px;
-        text-transform: uppercase; /* Mettre le texte en majuscules */
-        letter-spacing: 1px; /* Espacement des lettres pour un style plus élégant */
-    }
-
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centrer le contenu dans le conteneur */
-        background-color: #f9f9f9;
-        padding: 40px; /* Augmenter le rembourrage pour plus d'espace */
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .about-content {
-        text-align: center; /* Centrer le texte dans le contenu */
-        line-height: 1.8; /* Espacement des lignes */
-        font-size: 18px;
-        color: #333;
-        padding: 0 15px; /* Espacement latéral pour éviter le bord */
-    }
-
-    .about-content p {
-        margin-bottom: 15px; /* Espacement entre les paragraphes */
-        transition: color 0.3s; /* Transition douce pour le changement de couleur */
-    }
-
-    .about-content p:hover {
-        color: #003366; /* Changer la couleur au survol pour un effet interactif */
-    }
-
-    @media (min-width: 768px) {
-        .about-container {
-            flex-direction: column; /* Maintenir une colonne sur mobile */
-        }
-    }
-</style>
-
-<section id="comment-nous-agissons" class="how-we-work">
-    <h2 class="section-title">À quoi sert-on ?</h2>
-    <div class="how-we-work-container">
+<section id="comment-nous-agissons">
+    <h2>À quoi sert-on ?</h2>
+    <div class="about-content">
         <p>Nous opérons sur trois points cruciaux pour professionnaliser l'image en ligne de votre commerce et attirer plus de clients :</p>
         <ul class="methods-list">
-            <li><strong>I → Présence en ligne :</strong> Création et optimisation des comptes de réseaux sociaux pour améliorer la visibilité de votre commerce.</li>
-            <li><strong>II → Compte Google My Business :</strong> Optimisation du compte Google My Business pour attirer un maximum de clients.</li>
-            <li><strong>III → Sollicitation d'avis :</strong> Nous vous aidons à solliciter un maximum d’avis clients grâce à des méthodes efficaces et éprouvées.</li>
+            <li><strong>Présence en ligne :</strong> Création et optimisation des comptes de réseaux sociaux pour améliorer la visibilité de votre commerce.</li>
+            <li><strong>Compte Google My Business :</strong> Optimisation du compte Google My Business pour attirer un maximum de clients.</li>
+            <li><strong>Sollicitation d'avis :</strong> Nous vous aidons à solliciter un maximum d’avis clients grâce à des méthodes efficaces et éprouvées.</li>
         </ul>
     </div>
 </section>
 
-<style>
-    .how-we-work {
-        background-color: #f0faff; /* Couleur de fond douce */
-        padding: 60px 40px; /* Rembourrage pour l'espace */
-        border-radius: 12px;
-        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
-        max-width: 1200px;
-        margin: 40px auto; /* Centrer la section */
-        transition: transform 0.3s; /* Transition douce */
-    }
-
-    .how-we-work:hover {
-        transform: scale(1.02); /* Légère animation au survol */
-    }
-
-    .how-we-work-container {
-        text-align: center; /* Centrer tout le texte */
-        max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité */
-        line-height: 1.6; /* Espacement des lignes pour le confort de lecture */
-        margin: 0 auto; /* Centrer le conteneur */
-    }
-
-    .methods-list {
-        list-style-type: none; /* Supprimer les puces */
-        padding: 0;
-        margin: 20px 0; /* Marges autour de la liste */
-    }
-
-    .methods-list li {
-        background-color: #e6f2ff; /* Couleur de fond des items de la liste */
-        margin-bottom: 20px; /* Espacement accru entre les éléments de la liste */
-        padding: 20px; /* Rembourrage interne */
-        border-radius: 8px; /* Coins arrondis */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
-        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
-        max-width: 600px; /* Largeur maximale pour un meilleur rendu */
-        margin-left: auto; /* Centrer horizontalement */
-        margin-right: auto; /* Centrer horizontalement */
-        font-size: 18px; /* Taille de la police pour une meilleure lisibilité */
-        text-align: left; /* Alignement à gauche pour le texte */
-    }
-
-    .methods-list li:hover {
-        background-color: #d0e4ff; /* Changement de couleur au survol */
-        transform: translateY(-2px); /* Légère élévation au survol */
-    }
-
-    .methods-list li strong {
-        color: #003366; /* Couleur des textes forts */
-        font-size: 20px; /* Taille de la police pour les éléments importants */
-    }
-</style>
-
-<section id="presentation-process" class="process-section">
-    <h2 class="section-title">Comment ça marche ?</h2>
-    <div class="process-container">
-        <div class="process-content">
-            <p>Nous avons mis en place un processus simple, efficace et transparent pour chaque commerçant :</p>
-            <ol class="process-steps">
-                <li>
-                    <strong>I → État des lieux :</strong> Nous analysons <strong>gratuitement</strong> la situation actuelle de votre commerce en termes de sollicitation d'avis et de réputation en ligne.
-                </li>
-                <li>
-                    <strong>II → Bilan :</strong> Nous vous faisons un récapitulatif <strong>gratuit</strong> de l'état des lieux pour identifier avec vous les points à améliorer et établir un plan d'action.
-                </li>
-                <li>
-                    <strong>III → Devis :</strong> Nous proposons deux formules adaptées pour la mise en place du plan d'action :
-                    <ul class="pricing-options">
-                        <li><strong>Option 1 :</strong> Un paiement unique pour l'ensemble du service.</li>
-                        <li><strong>Option 2 :</strong> Un paiement basé sur les résultats.</li>
-                    </ul>
-                </li>
-            </ol>
+<section id="presentation-process">
+    <h2>Comment ça marche ?</h2>
+    <div class="process-content">
+        <p>Nous avons mis en place un processus simple, efficace et transparent pour chaque commerçant :</p>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <strong>État des lieux :</strong> Nous analysons gratuitement la situation actuelle de votre commerce en termes de sollicitation d'avis et de réputation en ligne.
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <strong>Bilan :</strong> Nous vous faisons un récapitulatif gratuit de l'état des lieux pour identifier avec vous les points à améliorer et établir un plan d'action.
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <strong>Devis :</strong> Nous proposons deux options pour la mise en place du plan d'action :
+                <div class="options">
+                    <div class="option">
+                        <h4>Option 1 : <span>Paiement unique</span></h4>
+                        <p>Un paiement unique pour l'ensemble du service, couvrant tout le processus d'optimisation.</p>
+                    </div>
+                    <div class="option">
+                        <h4>Option 2 : <span>Paiement basé sur les résultats</span></h4>
+                        <p>Un paiement flexible, où vous ne payez que lorsque nous obtenons des résultats concrets (par exemple, un nombre minimum d'avis supplémentaires).</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    .process-section {
-        background-color: #f9f9f9;
-        padding: 40px 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        margin: 40px auto;
-        transition: transform 0.3s; /* Ajout d'une transition */
-    }
-
-    .process-section:hover {
-        transform: scale(1.02); /* Légère animation au survol */
-    }
-
-    .section-title {
-        text-align: center;
-        color: #003366;
-        font-size: 32px;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        letter-spacing: 1px; /* Espacement des lettres */
-    }
-
-    .process-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* Centrer tout le texte */
-    }
-
     .process-content {
-        max-width: 800px;
-        line-height: 1.8; /* Espacement des lignes */
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.8;
     }
 
     .process-steps {
-        list-style-type: none;
-        padding: 0;
-        margin: 20px 0;
-    }
-
-    .process-steps li {
-        background-color: #fff;
-        padding: 15px;
-        border-left: 4px solid #003366;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s; /* Transition pour l'effet au survol */
-    }
-
-    .process-steps li:hover {
-        background-color: #e6f2ff; /* Changement de couleur au survol */
-    }
-
-    .pricing-options {
-        list-style: none;
-        padding-left: 20px;
-        margin-top: 10px;
-    }
-
-    .pricing-options li {
-        background-color: #e6f2ff;
-        padding: 10px;
-        border-radius: 6px;
-        margin-top: 10px;
-    }
-
-    .pricing-options li strong {
-        color: #003366;
-    }
-
-    @media (min-width: 768px) {
-        .process-container {
-            flex-direction: column; /* Maintenir une colonne sur mobile */
-        }
-    }
-</style>
-
-<section id="Pourquoi-nous-choisir" class="why-choose-us">
-    <h2 class="section-title">Pourquoi nous choisir ?</h2>
-    <div class="why-choose-container">
-        <div class="why-choose-content">
-            <p>Nos clients nous choisissent pour plusieurs raisons :</p>
-            <div class="choose-boxes">
-                <div class="choose-box">
-                    <i class="fas fa-check-circle"></i>
-                    <strong>État des lieux :</strong>
-                    <p>Nous offrons un état des lieux <strong>gratuit</strong> de votre commerce qui ne vous engage en rien.</p>
-                </div>
-                <div class="choose-box">
-                    <i class="fas fa-chart-line"></i>
-                    <strong>Résultats :</strong>
-                    <p>Notre processus <strong>garantit</strong> des résultats dès le premier mois de sa mise en place.</p>
-                </div>
-                <div class="choose-box">
-                    <i class="fas fa-handshake"></i>
-                    <strong>Flexibilité :</strong>
-                    <p>Des options de paiement flexibles, <strong>adaptées</strong> aux besoins de nos clients.</p>
-                </div>
-            </div>
-            <p>Résultats obtenus :</p>
-            <div class="results-boxes">
-                <div class="results-box">
-                    <i class="fas fa-star"></i>
-                    <strong>Plus d'avis 5 étoiles :</strong>
-                    <p>En moyenne, les commerces que nous avons accompagnés ont récolté plus de 50 avis clients 5 étoiles par mois.</p>
-                </div>
-                <div class="results-box">
-                    <i class="fas fa-users"></i>
-                    <strong>Améliorations significatives :</strong>
-                    <p>Les commerces sont devenus plus crédibles sur leur marché et attirent plus de clients.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .why-choose-us {
-        background-color: #f9f9f9;
-        padding: 40px 20px; /* Rembourrage pour une section plus compacte */
-        border-radius: 10px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        max-width: 900px; /* Réduction de la largeur maximale */
-        margin: 20px auto; /* Centrer la section */
-        transition: transform 0.3s; /* Ajout d'une transition */
-    }
-
-    .why-choose-us:hover {
-        transform: scale(1.02); /* Légère animation au survol */
-    }
-
-    .section-title {
-        text-align: center;
-        color: #003366;
-        font-size: 30px; /* Ajustement de la taille du titre */
-        margin-bottom: 20px; /* Espacement réduit */
-        text-transform: uppercase;
-        letter-spacing: 1px; /* Espacement des lettres */
-        border-bottom: 2px solid #003366; /* Ligne en bas du titre pour un effet décoratif */
-        padding-bottom: 10px; /* Espacement sous le titre */
-    }
-
-    .why-choose-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center; /* Centrer tout le texte */
+        gap: 20px;
     }
 
-    .why-choose-content {
-        max-width: 800px;
-        line-height: 1.6; /* Espacement des lignes ajusté pour une meilleure lisibilité */
-    }
-
-    .choose-boxes {
-        display: flex; /* Affichage en ligne des boîtes */
-        justify-content: space-between; /* Espacement égal entre les boîtes */
-        gap: 20px; /* Espacement entre les boîtes */
-        flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
-        max-width: 100%; /* Élargir les boîtes pour remplir l'espace */
-    }
-
-    .choose-box {
+    .step {
         background-color: #e6f2ff;
-        padding: 15px; /* Réduction du rembourrage interne */
+        padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
-        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
-        width: calc(30% - 20px); /* Largeur de 30% moins l'espacement */
-        min-width: 220px; /* Largeur minimale pour s'adapter aux petits écrans */
-        text-align: left; /* Alignement à gauche pour le texte */
+        max-width: 700px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        text-align: left;
     }
 
-    .choose-box:hover {
-        background-color: #d0e4ff; /* Changement de couleur au survol */
-        transform: translateY(-2px); /* Légère élévation au survol */
-    }
-
-    .choose-box strong {
-        color: #003366; /* Couleur des textes forts */
-    }
-
-    .choose-box i {
-        font-size: 20px; /* Taille des icônes */
-        color: #003366; /* Couleur des icônes */
-        margin-right: 10px; /* Espacement entre l'icône et le texte */
-    }
-
-    .results-boxes {
+    .step-number {
+        background-color: #8DAB94;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
         display: flex;
-        flex-direction: row; /* Alignement horizontal pour les résultats */
-        justify-content: space-between; /* Espacement égal entre les boîtes */
-        gap: 20px; /* Espacement entre les boîtes */
-        max-width: 100%; /* Élargir les boîtes pour remplir l'espace */
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .results-box {
-        background-color: #e6f2ff; /* Couleur de fond des résultats */
-        padding: 15px; /* Rembourrage interne */
-        border-radius: 8px; /* Coins arrondis */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
-        transition: background-color 0.3s, transform 0.3s; /* Transition pour le changement de couleur au survol */
-        width: calc(48%); /* Largeur pour s'assurer qu'elles soient côte à côte */
-        min-width: 220px; /* Largeur minimale pour s'adapter aux petits écrans */
-        text-align: left; /* Alignement à gauche pour le texte */
+    .options {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        gap: 20px;
     }
 
-    .results-box:hover {
-        background-color: #d0e4ff; /* Changement de couleur au survol */
-        transform: translateY(-2px); /* Légère élévation au survol */
+    .option {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        flex: 1;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .results-box strong {
-        color: #003366; /* Couleur des textes forts */
+    .option:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .results-box i {
-        font-size: 20px; /* Taille des icônes */
-        color: #003366; /* Couleur des icônes */
-        margin-right: 10px; /* Espacement entre l'icône et le texte */
+    .option h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #8DAB94;
     }
 
+    .option h4 span {
+        font-weight: bold;
+        color: #003366;
+    }
+
+    .option p {
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Responsive design pour petits écrans */
     @media (max-width: 768px) {
-        .choose-boxes, .results-boxes {
-            flex-direction: column; /* Retour en colonne sur les petits écrans */
-            align-items: center; /* Centrer les éléments sur les petits écrans */
+        .step-number {
+            left: -30px;
         }
-
-        .choose-box, .results-box {
-            width: 100%; /* Pleine largeur sur petits écrans */
+        .process-steps {
+            flex-direction: column;
+        }
+        .options {
+            flex-direction: column;
         }
     }
 </style>
 
-<section id="contact" class="contact-section">
-    <h2 class="contact-title">Prêt à rejoindre l'aventure ?</h2>
-    <p class="contact-subtitle">Nous contacter :</p>
-    <div class="contact-info">
-        <p><strong>Téléphone :</strong> +33 7 80 04 00 77</p>
-        <p><strong>Email :</strong> contact.noteup@gmail.com</p>
+<section id="Pourquoi-nous-choisir">
+    <h2>Pourquoi nous choisir</h2>
+    <div class="why-choose-content">
+        <p>Nos clients nous choisissent pour :</p>
+        <ul class="methods-list">
+            <li><strong>État des lieux :</strong> Nous offrons un état des lieux gratuit de votre commerce qui ne vous engage en rien.</li>
+            <li><strong>Résultats :</strong>Notre processus garantit des résultats dès le premier mois de sa mise en place.</li>
+            <li><strong>Flexibilité :</strong>Des options de paiement flexibles, adaptées aux besoins de nos clients.</li>
+        </ul>
     </div>
 </section>
 
-<style>
-    .contact-section {
-        background-color: #003366; /* Couleur de fond bleu marine */
-        color: white; /* Couleur du texte en blanc */
-        padding: 40px 20px; /* Rembourrage pour l'espace */
-        text-align: center; /* Centre le texte */
-        border-radius: 10px; /* Coins arrondis */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
-        margin: 40px auto; /* Espacement autour de la section */
-        max-width: 800px; /* Limite la largeur de la section */
-    }
-
-    .contact-title {
-        font-size: 32px; /* Augmentation de la taille du titre pour plus de visibilité */
-        margin-bottom: 10px; /* Espacement en dessous du titre */
-        text-transform: uppercase; /* Texte en majuscules */
-        font-weight: bold; /* Gras pour un meilleur contraste */
-        letter-spacing: 1px; /* Espacement des lettres pour une meilleure lisibilité */
-        color: white; /* Couleur du titre en blanc */
-    }
-
-    .contact-subtitle {
-        font-size: 20px; /* Taille de la police pour le sous-titre */
-        margin-bottom: 20px; /* Espacement en dessous du sous-titre */
-    }
-
-    .contact-info p {
-        margin: 5px 0; /* Espacement autour des coordonnées */
-        font-size: 18px; /* Taille de la police pour les coordonnées */
-    }
-</style>
+<section id="contact" class="contact-section">
+    <h2>Prêt à rejoindre l'aventure ?</h2>
+    <p><strong>Téléphone :</strong> +33 7 80 04 00 77</p>
+    <p><strong>Email :</strong> contact.noteup@gmail.com</p>
+    <a href="mailto:contact.noteup@gmail.com" class="btn">Nous Contacter</a>
+</section>
 
 <footer>
     <p>© 2024 NoteUp - Tous droits réservés</p>
 </footer>
 
-<style>
-    footer {
-        background-color: #003366; /* Couleur de fond bleu marine */
-        color: white; /* Couleur du texte en blanc */
-        text-align: center; /* Centre le texte */
-        padding: 15px 0; /* Rembourrage pour l'espacement */
-        position: relative; /* Position relative */
-        width: 100%; /* Prend toute la largeur */
-        margin-top: 40px; /* Espacement au-dessus du pied de page */
-        font-size: 14px; /* Taille de la police */
-    }
-</style>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            navbar.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
