@@ -160,10 +160,85 @@
 <body>
 
 <header>
-    <h1 class="logo">NoteUp</h1>
-    <p class="tagline">Agence d'avis Google</p>
-    <button id="menu-toggle">☰</button>
+    <div class="header-overlay">
+        <h1 class="logo">NoteUp</h1>
+        <p class="tagline">Agence d'avis Google</p>
+        <button id="menu-toggle">☰</button>
+    </div>
 </header>
+
+<style>
+    header {
+        position: relative;
+        background-image: url('maingoogle.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px; /* Augmentation de la hauteur pour un effet plus imposant */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .header-overlay {
+        background: rgba(0, 0, 0, 0.4); /* Ajout d'une superposition sombre pour plus de lisibilité */
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+    }
+
+    header:hover .header-overlay {
+        opacity: 0.95; /* Légère variation d'opacité pour un effet interactif */
+    }
+
+    .logo {
+        font-size: 56px;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Accentuation du texte pour le rendre plus lisible */
+        transition: transform 0.3s ease;
+    }
+
+    .tagline {
+        font-size: 24px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
+    }
+
+    header:hover .logo {
+        transform: scale(1.05); /* Légère mise en avant du texte au survol */
+    }
+
+    #menu-toggle {
+        background-color: rgba(255, 255, 255, 0.2); /* Bouton de menu transparent */
+        color: white;
+        border: 2px solid white;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    #menu-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1); /* Effet d'agrandissement sur le bouton au survol */
+    }
+
+    /* Parallax effect for header background */
+    header {
+        background-attachment: fixed; /* Effet de parallaxe pour rendre l'arrière-plan interactif lors du défilement */
+    }
+</style>
 
 <nav id="navbar">
     <a href="#presentation-entreprise">Qui sommes-nous ?</a>
